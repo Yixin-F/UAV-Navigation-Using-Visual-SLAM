@@ -5,20 +5,6 @@
 - PointCloudMapping
 
 
-
-<p align="center">
-  <img src="Fig1.png"/>
-  <br>
-  <em>Fig 1 : Test with TUM dataset</em>
-</p>
-
-<p align="center">
-  <img src="Fig2.png" height="300"/>
-  <img src="Fig3.png" height="300"/>
-  <br>
-  <em>Fig 2 : Static Scene(left) vs Dynamic Scene(right)</em>
-</p>
-
 ## Getting Started
 ### 0. Prerequisites
 
