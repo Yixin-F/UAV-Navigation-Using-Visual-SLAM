@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8...3.1)
 project(ORB_SLAM3_Icarus)
 
 IF(NOT CMAKE_BUILD_TYPE)
@@ -33,20 +33,17 @@ else()
     message(FATAL_ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++14 support. Please use a different C++ compiler.")
 endif()
 
-add_definitions(-w)
+# add_definitions(-w)
 
-find_package(OpenCV 4.0)
+find_package(OpenCV 3)
 if(NOT OpenCV_FOUND)
-    message(FATAL_ERROR "OpenCV > 4..0 not found.")
+    message(FATAL_ERROR "OpenCV > 4.0 not found.")
 endif()
 MESSAGE("OPENCV VERSION:" ${OpenCV_VERSION})
-
-LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
-  actionlib
   std_msgs
   cv_bridge
   image_transport
@@ -55,25 +52,33 @@ find_package(catkin REQUIRED COMPONENTS
   tf_conversions
 )
 
-find_package(Eigen3 REQUIRED)
+include_directories(
+    ${catkin_INCLUDE_DIRS}
+)
+
+LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
+set(CMAKE_PREFIX_PATH ${PROJECT_SOURCE_DIR}/Thirdparty/libtorch) # must put it at last
+
+find_package(Eigen3 3.3.1 REQUIRED)
 find_package(Pangolin REQUIRED)
 find_package(realsense2)  # if not find it, there maybe be short-term errors in build process
-find_package(PCL 1.12 REQUIRED)
-
-set(CMAKE_PREFIX_PATH ${PROJECT_SOURCE_DIR}/Thirdparty/libtorch) # must put it at last
 find_package(Torch REQUIRED)
+find_package(Sophus REQUIRED)
+find_package(PCL 1.12 REQUIRED)
 
 include_directories(
         ${PROJECT_SOURCE_DIR}
         ${PROJECT_SOURCE_DIR}/include
         ${PROJECT_SOURCE_DIR}/include/CameraModels
-        ${PROJECT_SOURCE_DIR}/Thirdparty/Sophus
+        # ${PROJECT_SOURCE_DIR}/Thirdparty/Sophus
         ${EIGEN3_INCLUDE_DIR}
         ${Pangolin_INCLUDE_DIRS}
         ${TORCH_INCLUDE_DIRS}
         ${PCL_INCLUDE_DIRS}
-        ${catkin_INCLUDE_DIRS}
 )
+
+add_definitions( ${PCL_DEFINITIONS} )
+link_directories( ${PCL_LIBRARY_DIRS} )
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 
@@ -166,15 +171,18 @@ if(realsense2_FOUND)
             )
 endif()
 
+# Build RGB-D TUM
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/RGB-D)
+add_executable(rgbd_tum
+        Examples/RGB-D/rgbd_tum.cc)
+target_link_libraries(rgbd_tum ${PROJECT_NAME})
+
 # Build RGB-D ROS
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/ROS)
 add_executable(RGBD
         Examples/ROS/ros_rgbd.cc
 )
-
-target_link_libraries(RGBD
-        ${PROJECT_NAME}
-)
+target_link_libraries(RGBD ${PROJECT_NAME})
 
 # Build Realsense
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/RGB-D)

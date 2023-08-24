@@ -19,15 +19,22 @@ Camera1.p1: -0.003257
 Camera1.p2: -0.000105
 Camera1.k3: 0.917205
 
+Camera.width: 640
+Camera.height: 480
+
 # Camera frames per second 
 Camera.fps: 30
 
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
 Camera.RGB: 1
 
-# Camera resolution
-Camera.width: 640
-Camera.height: 480
+# Close/Far threshold. Baseline times.
+Stereo.ThDepth: 40.0
+Stereo.b: 0.0767
+
+# Depth map values factor
+RGBD.DepthMapFactor: 5208.0
+
 
 #--------------------------------------------------------------------------------------------
 # ORB Parameters

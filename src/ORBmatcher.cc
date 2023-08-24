@@ -27,6 +27,15 @@
 
 #include<stdint-gcc.h>
 
+namespace cv
+{
+template<typename _Tp, int m, int n> static inline
+Matx<_Tp, m, n> operator / (const Matx<_Tp, m, n> &a, float alpha)
+{
+return Matx<_Tp, m, n>(a, 1.f / alpha, Matx_ScaleOp());
+}
+}
+
 using namespace std;
 
 namespace ORB_SLAM3

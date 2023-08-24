@@ -10,8 +10,8 @@ PointCloudMapper::PointCloudMapper()
 {
     mpGlobalMap = PointCloud::Ptr (std::make_shared<PointCloud>());
     cout << "voxel set start" << endl;
-    mpVoxel = pcl::VoxelGrid<PointT>::Ptr (std::make_shared<pcl::VoxelGrid<PointT>>());
-    mpVoxel->setLeafSize(0.01, 0.01, 0.01);
+    mpVoxel = pcl::VoxelGrid<pcl::PointXYZRGB>::Ptr (std::make_shared<pcl::VoxelGrid<pcl::PointXYZRGB>>());
+    mpVoxel->setLeafSize(0.02, 0.02, 0.02);
     cout << "voxel set finish" << endl;
 
 }
@@ -78,7 +78,7 @@ void PointCloudMapper::run()
             mqKeyFrame.pop();
             mqRGB.pop();
             mqDepth.pop();
-//            cout << "==============Insert No. " << ID << "KeyFrame ================" << endl;
+            cout << "==============Insert No. " << ID << "KeyFrame ================" << endl;
             ID++;
             *mpGlobalMap += *pointCloud_new;
             PointCloud::Ptr temp(std::make_shared<PointCloud>());

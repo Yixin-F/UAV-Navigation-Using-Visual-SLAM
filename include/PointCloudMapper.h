@@ -38,7 +38,7 @@ public:
     queue<cv::Mat> mqRGB;
     queue<cv::Mat> mqDepth;
 
-    pcl::VoxelGrid<PointT>::Ptr mpVoxel;
+    pcl::VoxelGrid<pcl::PointXYZRGB>::Ptr mpVoxel;
     std::mutex mmLoadKFMutex;
     PointCloud::Ptr mpGlobalMap;
     int mKeyFrameSize;

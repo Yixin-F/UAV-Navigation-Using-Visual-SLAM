@@ -30,7 +30,7 @@
 
 #include<opencv2/core/core.hpp>
 
-#include"../../../include/System.h"
+#include"../../include/System.h"
 
 using namespace std;
 
@@ -58,7 +58,9 @@ int main(int argc, char **argv)
     std::cout << "argv load successfully !" << std::endl;
 
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
+    // std::cout << std::string(argv[1]) << std::endl;
     ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::RGBD, true);
+    std::cout << "orb slam3 initialization successfully !" << std::endl;
 
     ImageGrabber igb(&SLAM);
 
