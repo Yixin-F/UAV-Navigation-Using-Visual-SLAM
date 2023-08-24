@@ -3,7 +3,7 @@
 **This code is an extended version of [YOLO_ORB_SLAM3_with_pointcloud_map](https://github.com/YWL0720/YOLO_ORB_SLAM3_with_pointcloud_map), and several bugs have been fixed.**
 - Dynamic Object Detect (YOLOv8)
 - Dense PointCloudMapping
-- Octomap path planning (Thanks to Shenpu Li in TJU, but comming soon)
+- Octomap path planning (Thanks to Lishen Pu in TJU, but comming soon)
 
 ### 0. Prerequisites
 We have tested on:
