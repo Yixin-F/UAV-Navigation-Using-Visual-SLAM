@@ -3,14 +3,14 @@
 **This code is an extended version of [YOLO_ORB_SLAM3_with_pointcloud_map](https://github.com/YWL0720/YOLO_ORB_SLAM3_with_pointcloud_map), and several bugs have been fixed.**
 - Dynamic Object Detect (YOLOv8)
 - Dense PointCloudMapping
-- Octomap path planning (Thanks to Lishen Pu in TJU, but comming soon)
+- Octomap path planning (Thanks to Lishen Pu in Tongji, but comming soon)
 
 ### 0. Prerequisites
 We have tested on:
 >
-> OS = Ubuntu 18.04
+> [OS] = Ubuntu 18.04
 >
-> OpenCV = 3.2
+> [OpenCV] = 3.2
 >
 > [Eigen3]= 3.3.1
 >
