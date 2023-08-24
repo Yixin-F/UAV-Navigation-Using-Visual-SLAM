@@ -1,90 +1,56 @@
-# YOLO_ORB_SLAM3_with_pointcloud_map
-**This code is an extended version of [YOLO_ORB_SLAM3](https://github.com/YWL0720/YOLO_ORB_SLAM3), which adds the functionality of creating dense point cloud maps.**
-- Object Detect
-- Dynamic SLAM
-- PointCloudMapping
+# ORB_SLAM3_Icarus (SEU)
+# This repo has supported Pictures Dataset and ROS Bag, so it's simple enough to be built.
+**This code is an extended version of [YOLO_ORB_SLAM3_with_pointcloud_map](https://github.com/YWL0720/YOLO_ORB_SLAM3_with_pointcloud_map), and several bugs have been fixed.**
+- Dynamic Object Detect (YOLOv8)
+- Dense PointCloudMapping
+- Octomap path planning (Thanks to Shenpu Li in TJU, but comming soon)
 
-
-## Getting Started
 ### 0. Prerequisites
-
 We have tested on:
+>
+> OS = Ubuntu 18.04
+>
+> OpenCV = 3.2
+>
+> [Eigen3]= 3.3.1
+>
+> [Pangolin] = 0.5
+>
+> [ROS] = Melodic
+> [libtorch] from [Baidu Netdisk](https://pan.baidu.com/s/1DQGM3rt3KTPWtpRK0lu8Fg?pwd=8y4k)
+code: 8y4k
 
->
-> OS = Ubuntu 20.04
->
-> OpenCV = 4.2
->
-> [Eigen3](http://eigen.tuxfamily.org/index.php?title=Main_Page) = 3.3.9
->
-> [Pangolin](https://github.com/stevenlovegrove/Pangolin) = 0.5
->
-> [ROS](http://wiki.ros.org/ROS/Installation) = Noetic
-
-
-### 1. Install libtorch
-
-#### Recommended way
-You can download the compatible version of libtorch from [Baidu Netdisk](https://pan.baidu.com/s/1DQGM3rt3KTPWtpRK0lu8Fg?pwd=8y4k)
-code: 8y4k,  then
+### 1. Build
 ```bash
-unzip libtorch.zip
-mv libtorch/ PATH/YOLO_ORB_SLAM3_with_pointcloud_map/Thirdparty/
-```
-#### Or you can
-
-```bash
-wget https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-1.11.0%2Bcpu.zip
-unzip libtorch-cxx11-abi-shared-with-deps-1.11.0%2Bcpu.zip
-mv libtorch/ PATH/YOLO_ORB_SLAM3_with_pointcloud_map/Thirdparty/
-```
-
-### 2. Build
-```bash
-cd YOLO_ORB_SLAM3_with_pointcloud_map
+cd ORB_SLAM3_Icarus
 chmod +x build.sh
 ./build.sh
 ```
 
-Only the rgbd_tum target will be build.
-
-### 3. Build ROS Examples
-Add the path including *Examples/ROS/YOLO_ORB_SLAM3_with_pointcloud_map* to the ROS_PACKAGE_PATH environment variable. Open .bashrc file:
-```bash
-gedit ~/.bashrc
-```
-and add at the end the following line. Replace PATH by the folder where you cloned YOLO_ORB_SLAM3_with_pointcloud_map:
-```bash
-export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/YOLO_ORB_SLAM3_with_pointcloud_map/Examples/ROS
-```
-Then build
-```bash
-chmod +x build_ros.sh
-./build_ros.sh
-```
-
-Only the RGBD target has been improved.
+rgbd_tum,  RGBD(ROS) and ros_RealsenseD435i (if you have your own equipments) targets will be build.
 
 The frequency of camera topic must be lower than 15 Hz.
 
-You can run this command to change the frequency of topic which published by the camera driver.
+You can run this command to change the frequency of topic which published by the camera driver in /launch file, but it's optional
 ```bash
-roslaunch YOLO_ORB_SLAM3_with_pointcloud_map camera_topic_remap.launch
+roslaunch camera_topic_remap.launch
 ```
 
-### 4. Try
-
+### 2. Try
 #### TUM Dataset
+From https://cvg.cit.tum.de/data/datasets/rgbd-dataset/download
+
+#### OpenLORIS-Scene Dataset
+From https://lifelong-robotic-vision.github.io/dataset/scene
 
 ```bash
 ./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUMX.yaml PATH_TO_SEQUENCE_FOLDER ASSOCIATIONS_FILE
 ```
 
-#### ROS
-
+#### Your own datasets in ROS
+Remember to change the topic in ros_rgbd.cc  !!
 ```bash
-roslaunch YOLO_ORB_SLAM3_with_pointcloud_map camera_topic_remap.launch
-rosrun YOLO_ORB_SLAM3_with_pointcloud_map RGBD PATH_TO_VOCABULARY PATH_TO_SETTINGS_FILE
+roscore
+./Examples/ROS/RGBD PATH_TO_VOCABULARY PATH_TO_SETTINGS_FILE
+rosbag play YOUR_OWN_ROS_BAG 
 ```
-# ORB_SLAM3_Icarus
-# ORB_SLAM3_Icarus
