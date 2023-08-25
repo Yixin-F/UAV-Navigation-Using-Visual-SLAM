@@ -56,7 +56,7 @@ roscore
 rosbag play YOUR_OWN_ROS_BAG 
 ```
 ### 3. Path Planning
-#### Got an Otcomap in .bt (/map files)
+#### Get an Otcomap in .bt (/map files)
 ```bash
 roslaunch rrtInteractive.launch (cd to this file)
 ./Examples/Planner/path_planner 
