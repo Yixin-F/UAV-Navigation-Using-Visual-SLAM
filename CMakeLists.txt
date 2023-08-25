@@ -50,6 +50,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   tf
   tf_conversions
+  octomap_ros
 )
 
 include_directories(
@@ -113,6 +114,7 @@ add_library(${PROJECT_NAME} SHARED
         src/Settings.cc
         src/YoloDetect.cpp
         src/PointCloudMapper.cpp
+        src/globalPlannerLib.cpp
         include/System.h
         include/Tracking.h
         include/LocalMapping.h
@@ -144,7 +146,13 @@ add_library(${PROJECT_NAME} SHARED
         include/Config.h
         include/Settings.h
         include/YoloDetect.h
-        include/PointCloudMapper.h)
+        include/PointCloudMapper.h
+        include/BoundedPQueue.h
+        include/KDTree.h
+        include/Point.h
+        include/rrtBase.h
+        include/rrtOctomap.h
+        include/utils.h)
 
 add_subdirectory(Thirdparty/g2o)
 
@@ -191,4 +199,11 @@ if(realsense2_FOUND)
             Examples/RGB-D/rgbd_realsense_D435i.cc)
     target_link_libraries(rgbd_realsense_D435i ${PROJECT_NAME})
 endif()
+
+# Build Path Planner
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Planner)
+add_executable(path_planner
+        Examples/Planner/rrtInteractiveNode.cpp
+)
+target_link_libraries(path_planner ${PROJECT_NAME})
 

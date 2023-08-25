@@ -1,0 +1,23 @@
+# Robot:
+collision_box: [1.0, 1.0, 0.6]
+# collision_box: [0.4, 0.4, 0.4]
+
+
+# Environment:
+env_box: [-100, 100, -100, 100, 0, 1.5] # xmin, xmax, ymin, ymax, zmin, zmax
+
+
+# Planner parameters:
+timeout: 5.0 #s
+rrt_incremental_distance: 0.3 #m
+rrt_connect_goal_ratio: 0.2
+goal_reach_distance: 0.4 #m
+map_resolution: 0.2 # this should be at least bigger or equal to the true map resolution
+
+# Planner Visualization:
+vis_RRT: True # does not support for RRT*
+vis_path: True
+
+# RRT* parameter:
+neighborhood_radius: 1.0 #m
+max_num_neighbors: 10

@@ -37,7 +37,7 @@ You can run this command to change the frequency of topic which published by the
 roslaunch camera_topic_remap.launch
 ```
 
-### 2. Try
+### 2. SLAM
 #### TUM Dataset
 From https://cvg.cit.tum.de/data/datasets/rgbd-dataset/download
 
@@ -55,3 +55,11 @@ roscore
 ./Examples/ROS/RGBD PATH_TO_VOCABULARY PATH_TO_SETTINGS_FILE
 rosbag play YOUR_OWN_ROS_BAG 
 ```
+### 3. Path Planning
+#### Got an Otcomap in .bt (/map files)
+```bash
+roslaunch rrtInteractive.launch (cd to this file)
+./Examples/Planner/path_planner 
+```
+#### Interact with 3D Navigation button
+Select your start and goal points in rviz.
