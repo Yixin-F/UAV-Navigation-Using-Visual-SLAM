@@ -32,7 +32,7 @@ chmod +x build.sh
 ./build.sh
 ```
 
-rgbd_tum,  RGBD(ROS) and ros_RealsenseD435i (if you have your own equipments) targets will be build.
+rgbd_tum, RGBD(ROS) and ros_RealsenseD435i (if you have your own equipments) targets will be build.
 
 The frequency of camera topic must be lower than 15 Hz.
 
