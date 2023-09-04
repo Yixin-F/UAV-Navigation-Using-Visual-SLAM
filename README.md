@@ -71,4 +71,6 @@ Make sure that your gazebo/mavlink is working, and you should learn how to estab
 
 
 #### Octomap Navigation and PX4 Control
-![image](https://github.com/Yixin-F/UAV-Navigation-Using-Visual-SLAM/image/gazebo.png) 
+
+![image](image/navigation.gif) 
+![image](image/px4.gif) 
