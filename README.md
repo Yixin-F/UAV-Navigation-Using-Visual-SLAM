@@ -7,7 +7,7 @@
 - Dynamic Object Detect (YOLOv8)
 - Dense PointCloud Mapping
 - Octomap Path Planning
-- UAV Control Using PX4 (Thanks to Lishen Pu from Tongji, this part is comming soon...)
+- UAV Control Using PX4 (Thanks to Lishen Pu from Tongji)
 
 ### 0. Prerequisites
 We have tested on:
@@ -71,7 +71,7 @@ Select your start and goal points in rviz.
 <img src="image/rrt.png" width="40%">
 </centre>
 
-### 4. UAV Control 
+### 4. UAV Control (code is comming soon...)
 Make sure that your gazebo/mavlink is working, and you should learn how to establish your own project with [PX4](https://px4.io/) 
 
 #### Gazebo Simulation and QGround
