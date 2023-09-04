@@ -49,7 +49,7 @@ From https://cvg.cit.tum.de/data/datasets/rgbd-dataset/download
 From https://lifelong-robotic-vision.github.io/dataset/scene
 
 ```bash
-./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUMX.yaml PATH_TO_SEQUENCE_FOLDER ASSOCIATIONS_FILE
+./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt config/TUMX.yaml PATH_TO_SEQUENCE_FOLDER ASSOCIATIONS_FILE
 ```
 #### Your own datasets in ROS
 Remember to change the topic in ros_rgbd.cc  !!
