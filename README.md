@@ -68,9 +68,15 @@ Select your start and goal points in rviz.
 Make sure that your gazebo/mavlink is working, and you should learn how to establish your own project with [PX4](https://px4.io/) 
 
 #### Gazebo Simulation and QGround
-
+<centre>
+<img src="image/gazebo.png" width="70%">
+</centre>
 
 #### Octomap Navigation and PX4 Control
+<centre>
+<img src="image/navigation.gif" width="50%">
+</centre>
+<centre>
+<img src="image/px4.gif" width="50%">
+<centre>
 
-![image](image/navigation.gif) 
-![image](image/px4.gif) 
