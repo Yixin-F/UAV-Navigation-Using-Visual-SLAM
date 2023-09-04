@@ -44,18 +44,21 @@ roslaunch camera_topic_remap.launch
 ### 2. SLAM
 #### TUM Dataset
 From https://cvg.cit.tum.de/data/datasets/rgbd-dataset/download
+
 <centre>
 <img src="image/office.gif" width="50%">
 </centre>
 
-#### OpenLORIS-Scene Dataset
-From https://lifelong-robotic-vision.github.io/dataset/scene
-
 ```bash
 ./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt config/TUMX.yaml PATH_TO_SEQUENCE_FOLDER ASSOCIATIONS_FILE
 ```
+
 #### Your own datasets in ROS
 Remember to change the topic in ros_rgbd.cc  !!
+
+##### OpenLORIS-Scene Dataset
+From https://lifelong-robotic-vision.github.io/dataset/scene
+
 ```bash
 roscore
 ./Examples/ROS/RGBD Vocabulary/ORBvoc.txt  PATH_TO_SETTINGS_FILE
