@@ -1,6 +1,7 @@
 ## UAV Navigation System Using Visual SLAM in Dynamic Environment
 ### This repo has supported Pictures Dataset and ROS Bag, so it's simple enough to be built.
 ### RealsenseD435i and UAV
+
 <img src="image/realsense.png" width="30%"><img src="image/uav.jpg" width="30%">
 
 - Dynamic Object Detect (YOLOv8)
@@ -68,7 +69,7 @@ roslaunch rrtInteractive.launch (cd to this file)
 Select your start and goal points in rviz.
 
 <centre>
-<img src="image/rrt.png" width="50%">
+<img src="image/rrt.png" width="40%">
 </centre>
 
 ### 4. UAV Control 
@@ -76,7 +77,7 @@ Make sure that your gazebo/mavlink is working, and you should learn how to estab
 
 #### Gazebo Simulation and QGround
 <centre>
-<img src="image/gazebo.png" width="70%">
+<img src="image/gazebo.png" width="50%">
 </centre>
 
 #### Octomap Navigation and PX4 Control
