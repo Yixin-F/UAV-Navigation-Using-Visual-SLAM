@@ -72,14 +72,16 @@ Select your start and goal points in rviz.
 </centre>
 
 ### 4. UAV Control (code is comming soon...)
-Make sure that your gazebo/mavlink is working, and you should learn how to establish your own project with [PX4](https://px4.io/) 
+#### 1) Preparation
+Make sure that your gazebo/mavlink is working !!
+You should learn how to establish your own project with [PX4](https://px4.io/) 
 
-#### Gazebo Simulation and QGround
+#### 2) Gazebo Simulation and QGround
 <centre>
 <img src="image/gazebo.png" width="50%">
 </centre>
 
-#### Octomap Navigation and PX4 Control
+#### 3) Octomap Navigation and PX4 Control
 <centre>
 <img src="image/navigation.gif" width="50%">
 </centre>
