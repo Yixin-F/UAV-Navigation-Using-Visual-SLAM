@@ -55,7 +55,7 @@ From https://lifelong-robotic-vision.github.io/dataset/scene
 Remember to change the topic in ros_rgbd.cc  !!
 ```bash
 roscore
-./Examples/ROS/RGBD PATH_TO_VOCABULARY PATH_TO_SETTINGS_FILE
+./Examples/ROS/RGBD Vocabulary/ORBvoc.txt  PATH_TO_SETTINGS_FILE
 rosbag play YOUR_OWN_ROS_BAG 
 ```
 ### 3. Path Planning
