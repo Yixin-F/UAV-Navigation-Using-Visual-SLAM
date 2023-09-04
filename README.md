@@ -63,3 +63,6 @@ roslaunch rrtInteractive.launch (cd to this file)
 ```
 #### Interact with 3D Navigation button
 Select your start and goal points in rviz.
+
+### 4. UAV Control 
+Make sure that your gazebo/mavlink is working, and you should learn how to establish your own project with PX4 (https://px4.io/)
