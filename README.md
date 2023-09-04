@@ -44,6 +44,9 @@ roslaunch camera_topic_remap.launch
 ### 2. SLAM
 #### TUM Dataset
 From https://cvg.cit.tum.de/data/datasets/rgbd-dataset/download
+<centre>
+<img src="image/office.gif" width="50%">
+</centre>
 
 #### OpenLORIS-Scene Dataset
 From https://lifelong-robotic-vision.github.io/dataset/scene
@@ -58,6 +61,10 @@ roscore
 ./Examples/ROS/RGBD Vocabulary/ORBvoc.txt  PATH_TO_SETTINGS_FILE
 rosbag play YOUR_OWN_ROS_BAG 
 ```
+<centre>
+<img src="image/market.gif" width="50%">
+</centre>
+
 ### 3. Path Planning
 #### Get an Otcomap in .bt (/map files)
 ```bash
