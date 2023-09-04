@@ -67,7 +67,7 @@ Select your start and goal points in rviz.
 ### 4. UAV Control 
 Make sure that your gazebo/mavlink is working, and you should learn how to establish your own project with [PX4](https://px4.io/) 
 #### Gazebo Simulation and QGround
-<center>
-<img src="https://github.com/Yixin-F/UAV-Navigation-Using-Visual-SLAM/gazebo.png" width="70%">
-</center>
 ![image](https://github.com/Yixin-F/UAV-Navigation-Using-Visual-SLAM/gazebo.png) 
+#### Octomap Navigation and PX4 control
+![image](https://github.com/Yixin-F/UAV-Navigation-Using-Visual-SLAM/navigation.png) 
+![image](https://github.com/Yixin-F/UAV-Navigation-Using-Visual-SLAM/PX4.png) 
