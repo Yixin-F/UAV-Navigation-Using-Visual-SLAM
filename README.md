@@ -1,4 +1,4 @@
-# ORB_SLAM3_Icarus (SEU)
+# UAV Navigation System Using Visual SLAM in Dynamic Environment
 # This repo has supported Pictures Dataset and ROS Bag, so it's simple enough to be built.
 - Dynamic Object Detect (YOLOv8)
 - Dense PointCloud Mapping
