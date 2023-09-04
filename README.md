@@ -1,9 +1,9 @@
 # ORB_SLAM3_Icarus (SEU)
 # This repo has supported Pictures Dataset and ROS Bag, so it's simple enough to be built.
-**This code is an extended version of [YOLO_ORB_SLAM3_with_pointcloud_map](https://github.com/YWL0720/YOLO_ORB_SLAM3_with_pointcloud_map), and several bugs have been fixed.**
 - Dynamic Object Detect (YOLOv8)
-- Dense PointCloudMapping
-- Octomap path planning (Thanks to Lishen Pu in Tongji)
+- Dense PointCloud Mapping
+- Octomap Path Planning
+- UAV Control Using PX4 (Thanks to Lishen Pu from Tongji, this part is comming soon...)
 
 ### 0. Prerequisites
 We have tested on:
