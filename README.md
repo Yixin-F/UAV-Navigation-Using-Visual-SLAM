@@ -85,7 +85,7 @@ Select your start and goal points in rviz.
 #### 1) Preparation
 Make sure that your gazebo/mavlink is working !!
 
-You should learn how to establish your own project with [PX4](https://px4.io/) 
+You should learn how to establish your own project with [PX4](https://px4.io/) or [XTDrone](https://www.yuque.com/xtdrone/manual_cn)
 
 #### 2) Gazebo Simulation and QGround
 <centre>
