@@ -52,6 +52,8 @@ From https://cvg.cit.tum.de/data/datasets/rgbd-dataset/download
 ```bash
 ./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt config/TUMX.yaml PATH_TO_SEQUENCE_FOLDER ASSOCIATIONS_FILE
 ```
+#### Evaluation on TUM
+<img src="image/ate_Dynamic.png" width="40%"><img src="image/ate_ORB.png" width="40%">
 
 #### Your own datasets in ROS
 Remember to change the topic in ros_rgbd.cc  !!
